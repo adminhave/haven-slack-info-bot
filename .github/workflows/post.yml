@@ -3,7 +3,7 @@ name: Post Building Info (TEST)
 on:
   workflow_dispatch:  # lets you run it manually to test
   schedule:
-  - cron: "*/30 * * * *"  # every 1 minutes (TEST ONLY)
+  - cron: "*/5 * * * *"  # every 1 minutes (TEST ONLY)
 
 jobs:
   post:
