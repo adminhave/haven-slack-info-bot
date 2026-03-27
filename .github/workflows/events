@@ -21,5 +21,5 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-          BUILDING_INFO_MESSAGE: ${{ secrets.SECOND_MESSAGE }}
+          BUILDING_INFO_MESSAGE: ${{ secrets.Event_Info }}
         run: python post.py
