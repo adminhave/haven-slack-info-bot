@@ -1,0 +1,25 @@
+name: Second Info Post
+
+on:
+  schedule:
+    - cron: "0 17 * * 3"  # example: Wednesday 9am Pacific
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install requests
+
+      - name: Post to Slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          BUILDING_INFO_MESSAGE: ${{ secrets.SECOND_MESSAGE }}
+        run: python post.py
