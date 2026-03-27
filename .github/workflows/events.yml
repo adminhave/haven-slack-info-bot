@@ -2,7 +2,7 @@ name: Events Info Post
 
 on:
   schedule:
-    - cron: "0 17 * * 3"  # example: Wednesday 9am Pacific
+    - cron: "0 17 * * 1"  # example: Wednesday 9am Pacific
   workflow_dispatch:
 
 jobs:
